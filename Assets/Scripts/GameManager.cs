@@ -18,8 +18,13 @@ public class GameManager : MonoBehaviour
 
     }
 
+
+    #region SceneTransition
+
     public void GoToMuseum()
     {
         SceneManager.LoadScene("Museum");
     }
+
+    #endregion
 }
