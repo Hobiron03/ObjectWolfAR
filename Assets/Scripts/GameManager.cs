@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject selectHowToPlayUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,15 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void PushPlayButton()
+    {
+        selectHowToPlayUI.SetActive(true);
+    }
+
+    public void CloseSelectHowToPlayUI()
+    {
+        selectHowToPlayUI.SetActive(false);
+    }
 
     #region SceneTransition
 
