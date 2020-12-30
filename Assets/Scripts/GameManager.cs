@@ -3,18 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using DG.Tweening;
 using UnityEngine.SceneManagement;
+
 
 
 public class GameManager : MonoBehaviour
 {
     public GameObject selectHowToPlayUI;
+    public GameObject fadePanelCanvas;
     public GameObject fadePanel;
 
     // Start is called before the first frame update
     void Start()
     {
-        Image fadePanelImage = fadePanel.GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -38,9 +40,17 @@ public class GameManager : MonoBehaviour
 
     public void FadeOutScreen(string destination)
     {
+        fadePanelCanvas.SetActive(true);
+        Image fadePanelImage = fadePanel.GetComponent<Image>();
 
+        DOTween.ToAlpha(
+            () => fadePanelImage.color,
+            color => fadePanelImage.color = color,
+            1.0f,
+            0.3f
+        );
 
-        SceneManager.LoadScene(destination);
+        // SceneManager.LoadScene(destination);
     }
 
     //一つの端末でプレイ
@@ -48,10 +58,12 @@ public class GameManager : MonoBehaviour
     {
         FadeOutScreen("OnePhoneGame");
     }
+
     public void GoToMultiPhoneGameScreen()
     {
         SceneManager.LoadScene("OnePhoneGame");
     }
+
     public void GoToMuseum()
     {
         SceneManager.LoadScene("Museum");

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Museum.unity
     guid: c70ce39dd12e24d0699fcd6b1ffef34a
+  - enabled: 1
+    path: Assets/Scenes/OnePhoneGame.unity
+    guid: 9e6e94ebe03994b6a8240f1e57bb93a9
   m_configObjects: {}
